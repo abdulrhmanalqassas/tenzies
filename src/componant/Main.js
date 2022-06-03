@@ -6,7 +6,7 @@ export default class Main extends React.PureComponent{
       let diceArray=[]
       for (let i=0 ; i<10 ;i++){
         let random = Math.floor((Math.random() * 6)+1);
-        diceArray.push(random)
+        diceArray.push( {value: random , isHeld: false})
       } 
       return(diceArray)
     }
@@ -16,7 +16,12 @@ export default class Main extends React.PureComponent{
         let myarr = this.state.dice.map(
           (value,index)=>{
             return(
-              <Dice key={index} text ={value} />
+              <Dice 
+              key={index}
+              text ={value.value} 
+              isHeld={value.isHeld}
+              held = {this.held}
+              />
             ) 
           }
         )
@@ -28,7 +33,10 @@ export default class Main extends React.PureComponent{
         console.log(this.state.dice)
        
       }  ;
-      
+      held=()=> {
+        
+
+      }
       render(){
         
         return(
@@ -38,7 +46,9 @@ export default class Main extends React.PureComponent{
              <div  className="grid-container" >
              { this.curintDice()}
              </div>
-             <div onClick={this.roll} className="butt-roll"><h2 className="butt-roll-text">Roll</h2></div>
+             <div onClick={this.roll}  className="butt-roll">
+               <h2 className="butt-roll-text">Roll</h2>
+               </div>
            </main> 
         )
       }
