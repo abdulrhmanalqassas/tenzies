@@ -38,7 +38,7 @@ export default class Main extends React.PureComponent{
              <div  className="grid-container" >
              { this.curintDice()}
              </div>
-             <div onClick={this.roll} className="butt-roll">Roll the dice</div>
+             <div onClick={this.roll} className="butt-roll"><h2 className="butt-roll-text">Roll</h2></div>
            </main> 
         )
       }
