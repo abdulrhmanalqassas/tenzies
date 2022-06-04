@@ -20,7 +20,7 @@ export default class Main extends React.PureComponent{
               key={index}
               text ={value.value} 
               isHeld={value.isHeld}
-              held = {this.held}
+              // held = {this.held}
               />
             ) 
           }
@@ -33,10 +33,10 @@ export default class Main extends React.PureComponent{
         console.log(this.state.dice)
        
       }  ;
-      held=()=> {
+      // held=()=> {
         
 
-      }
+      // }
       render(){
         
         return(
