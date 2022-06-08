@@ -1,5 +1,6 @@
 import React from "react"
 
+
 export default class Dice extends React.Component{
    
     render(){
@@ -8,8 +9,7 @@ export default class Dice extends React.Component{
           style = {
             backgroundColor: this.props.isHELD? "#59E391" : "#fff"
           }
-
-
+ 
       return (
              
              <div onClick={()=>{this.props.holdDice(this.props.id)}}  style={style} className="grid-item" >

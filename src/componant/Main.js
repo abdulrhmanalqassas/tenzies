@@ -1,12 +1,17 @@
 import React from "react";
-import Dice from "./Dice.js"
+import Dice from "./Dice.js";
+import { nanoid } from "nanoid";
+
 export default class Main extends React.PureComponent{
      
     allNewDice = ()=>{
       let diceArray=[]
       for (let i=0 ; i<10 ;i++){
         let random = Math.floor((Math.random() * 6)+1);
-        diceArray.push( {value: random , isHeld: false})
+        diceArray.push( {value: random ,
+           isHeld: false,
+           id : nanoid()
+          })
       } 
       return(diceArray)
     }
@@ -21,8 +26,8 @@ export default class Main extends React.PureComponent{
           (value,index)=>{
             return(
               <Dice 
-              key={index}
-              id={index}
+              key={value.id}
+              id={value.id}
               text ={value.value} 
               isHeld={value.isHeld}
               holdDice={this.holdDice}
