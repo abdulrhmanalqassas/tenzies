@@ -12,15 +12,21 @@ export default class Main extends React.PureComponent{
     }
     
       state = {dice : this.allNewDice()}
+
+      holdDice = (id)=>{
+        console.log(id)
+      }
       curintDice=()=>{
         let myarr = this.state.dice.map(
           (value,index)=>{
             return(
               <Dice 
               key={index}
+              id={index}
               text ={value.value} 
               isHeld={value.isHeld}
-              // held = {this.held}
+              holdDice={this.holdDice}
+              
               />
             ) 
           }
