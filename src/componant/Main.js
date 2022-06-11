@@ -15,19 +15,23 @@ export default class Main extends React.PureComponent {
   componentDidUpdate(prevProps, prevState) {
     if (prevState !== this.state) {
       let diceArr = this.state.dice;
-      let winGame = false;
+      let winGame;
       for (let i = 0; i < diceArr.length - 1; i++) {
         let curint = diceArr[i];
         let next = diceArr[i + 1];
-        if (curint.isHeld === true && curint.value === next.value) {
+        if (curint.isHeld && curint.value === next.value) {
           winGame = true;
         } else {
           winGame = false;
           break;
         }
-        // return winGame
       }
-      console.log("u win", winGame); // After update
+      if (winGame){
+        this.setState(
+          {tenzies:winGame}
+        )
+      }
+      console.log("u win", winGame,"   >>>>tenzee",this.state.tenzies); // After update
     }
   }
   state = {
