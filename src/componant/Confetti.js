@@ -1,13 +1,12 @@
-// import React from "react";
-// import useWindowSize from 'react-use/lib/useWindowSize'
-// import Confetti from 'react-confetti'
+import React from "react";
 
-// export default function Con () {
-//     const { width, height } = useWindowSize()
-//     return (
-//       <Confetti
-//         width={width}
-//         height={height}
-//       />
-//     )
-//   }
+import Confetti from 'react-confetti'
+
+export default function Con () {
+   
+    return (
+      <Confetti
+        
+      />
+    )
+  }

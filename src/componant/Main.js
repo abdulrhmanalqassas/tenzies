@@ -1,8 +1,8 @@
 import React from "react";
 import Dice from "./Dice.js";
 import { nanoid } from "nanoid";
-import useWindowSize from 'react-use/lib/useWindowSize'
-import Confetti from 'react-confetti'
+// import useWindowSize from 'react-use/lib/useWindowSize'
+// import Confetti from 'react-confetti'
 import Con  from "./Confetti.js";
 
 export default class Main extends React.PureComponent {
@@ -92,7 +92,7 @@ export default class Main extends React.PureComponent {
   render() {
     return (
       <main className="main">
-        <Con/>
+       <Con></Con>
         <h1 className="title">Tenzies</h1>
         <p className="instructions">
           Roll until all dice are the same. Click each die to freeze it at its
